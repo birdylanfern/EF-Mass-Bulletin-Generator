@@ -39,7 +39,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
         <div className="flex items-center gap-3 min-w-0">
           <div className="w-10 h-10 rounded-full bg-white p-0.5 border border-stone-400 flex items-center justify-center shrink-0 overflow-hidden shadow-xs">
             <img
-              src="/assets/crest-highres.png"
+              src={`${import.meta.env.BASE_URL}assets/crest-highres.png`}
               alt="Coat of Arms"
               className="w-full h-full object-contain"
             />

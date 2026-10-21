@@ -217,7 +217,7 @@ export const BulletinPreview: React.FC<BulletinPreviewProps> = ({
   const shortKyrialeName = massSettings.kyrialeName.split('(')[0].trim();
 
   // Dynamic QR code generation for the LinkTree / Community URL
-  const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string>('/assets/qr-linktree.png');
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string>(`${import.meta.env.BASE_URL}assets/qr-linktree.png`);
 
   useEffect(() => {
     const targetUrl = generalInfo.linkTreeUrl || 'https://linktr.ee/efmasscommunitysingapore';
@@ -232,7 +232,7 @@ export const BulletinPreview: React.FC<BulletinPreviewProps> = ({
       .then((url) => setQrCodeDataUrl(url))
       .catch((err) => {
         console.error('Failed to generate dynamic QR code data URL:', err);
-        setQrCodeDataUrl('/assets/qr-linktree.png');
+        setQrCodeDataUrl(`${import.meta.env.BASE_URL}assets/qr-linktree.png`);
       });
   }, [generalInfo.linkTreeUrl]);
 
@@ -758,7 +758,7 @@ export const BulletinPreview: React.FC<BulletinPreviewProps> = ({
             <div className="relative w-[calc(100%+4px)] -mr-1 -ml-0.5 h-[118px] bg-black overflow-hidden flex items-center justify-between px-5 select-none border-b-2 border-stone-900 shrink-0">
               {/* Background 4K Altar Consecration Image */}
               <img
-                src="/assets/banner-4k.png"
+                src={`${import.meta.env.BASE_URL}assets/banner-4k.png`}
                 crossOrigin="anonymous"
                 alt="Elevation of the Sacred Host at High Altar"
                 className="absolute -inset-1 w-[calc(100%+8px)] h-[calc(100%+8px)] object-cover opacity-90 object-[center_36%] filter contrast-105 brightness-115 pointer-events-none"
@@ -770,7 +770,7 @@ export const BulletinPreview: React.FC<BulletinPreviewProps> = ({
               <div className="relative z-10 flex items-center">
                 <div className="w-[74px] h-[74px] rounded-full bg-white/95 p-1 shadow-md border-2 border-stone-900 flex items-center justify-center">
                   <img
-                    src="/assets/crest-highres.png"
+                    src={`${import.meta.env.BASE_URL}assets/crest-highres.png`}
                     crossOrigin="anonymous"
                     alt="Singapore Latin Mass Community Coat of Arms"
                     className="w-full h-full object-contain"
