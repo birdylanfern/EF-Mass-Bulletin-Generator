@@ -6,6 +6,9 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     base: process.env.BASE_PATH || '/',
+    build: {
+      target: ['es2018', 'safari13', 'chrome80'],
+    },
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: { '@': path.resolve(__dirname, '.') },
