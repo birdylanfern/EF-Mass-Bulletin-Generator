@@ -1,0 +1,6 @@
+{
+  "name": "Singapore Extraordinary Form Bulletin Generator",
+  "description": "Automated Traditional Latin Mass bulletin generator with Singapore liturgical calendar calculation, Campion Missal propers, Divine Intimacy meditations, and PDF export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
