@@ -252,7 +252,7 @@ function getTemporalDayInfo(date: Date): DayLiturgicalInfo {
       if (isThirdSundayOfOctober(date)) {
         commemorations.push('Propaganda Fide');
       }
-      if (romanFeast && romanFeast.liturgicalClass !== 'IV') {
+      if (romanFeast && romanFeast.liturgicalClass === 'II') {
         commemorations.push(romanFeast.name);
       }
 
@@ -395,7 +395,7 @@ function getTemporalDayInfo(date: Date): DayLiturgicalInfo {
       const prop = CAMPION_MISSAL_PROPERS[key];
 
       const commemorations: string[] = [];
-      if (romanFeast && romanFeast.liturgicalClass !== 'IV') {
+      if (romanFeast && romanFeast.liturgicalClass === 'II') {
         commemorations.push(romanFeast.name);
       }
 
