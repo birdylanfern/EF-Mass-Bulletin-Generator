@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background-color: #f5f5f4;
+    color: #1c1917;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print Styles for A5 (148mm × 210mm) booklet generation with high contrast */
+@media print {
+  @page {
+    size: 148mm 210mm;
+    margin: 0;
+  }
+
+  html, body {
+    width: 148mm !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header,
+  .no-print,
+  #form-container,
+  button {
+    display: none !important;
+  }
+
+  #main-viewport {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+  }
+
+  #bulletin-document {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    transform: none !important;
+  }
+
+  .page-sheet {
+    width: 148mm !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+    border: none !important;
+  }
+}
+
+/* Page break helper for html2pdf */
+.page-break-after-pdf {
+  page-break-after: always;
+  break-after: page;
+}
+
+/* High contrast mode for monochrome laser printers */
+.high-contrast-bw {
+  filter: grayscale(100%) contrast(120%);
+}
